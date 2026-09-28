@@ -1,0 +1,48 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb,amsmath,amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\title{Orlov's equivalence on a locked sextic fourfold}
+\author{Benjamin Stanley Frohman}
+\date{28 September 2026}
+\begin{document}
+\begin{abstract}
+Orlov's 2009 theorem is specialized to the sextic
+$F=x_0^5x_3+x_3^6+x_1^5x_4+x_4^6+x_2^5x_5+x_5^6$.
+Because the Gorenstein parameter vanishes, $D^b(\mathrm{Coh}\,V(F))\simeq \mathrm{HMF}^{\mathrm{gr}}(F)$.
+This is a change of presentation of one category. It is not a Hodge counterexample: field~3 remains empty.
+\end{abstract}
+\maketitle
+
+\section{Disclaimer}
+This note records an existing theorem on one host. It does not inhabit the type of a rational Hodge counterexample. No function $\mathrm{miss}_\gamma$ is constructed.
+
+\section{Data}
+Let $S=\CC[x_0,\dots,x_5]$ and $F=x_0^5x_3+x_3^6+x_1^5x_4+x_4^6+x_2^5x_5+x_5^6$. Write $X=V(F)\subset\PP^5$, assumed smooth, and $R=S/(F)$. Then $n=5$, $w=6$, and $a=n+1-w=0$. Hence $K_X\simeq\mathcal{O}_X$.
+
+\section{The equivalence}
+\begin{theorem}[Orlov 2009, Thms.~2.5(iii), 2.13(iii), 3.11(iii)]
+$D^b(\mathrm{Coh}\,X)\simeq D^{\mathrm{gr}}_{\mathrm{Sg}}(R)\simeq \mathrm{HMF}^{\mathrm{gr}}(F)$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Serre identifies $D^b(\mathrm{Coh}\,X)$ with $D^b(\mathrm{qgr}\,R)$. Eisenbud identifies $\mathrm{HMF}^{\mathrm{gr}}(F)$ with the graded singularity category of $R$. Orlov compares the two by window functors $\Phi_i,\Psi_i$, $i\in\mathbb{Z}$. On a sheaf $\mathcal{E}$, $\Psi_i(\mathcal{E})$ is the Eisenbud stabilization of the truncated section module $\tau_{\ge i}\Gamma_*(\mathcal{E}(\bullet))$. When $a=0$ there is no leftover exceptional collection, so $\Phi_i$ and $\Psi_i$ are inverse equivalences.
+\end{proof}
+
+\begin{remark}
+Every window still factorizes the same polynomial $F$. $\mathrm{ch}(\Psi_i(\mathcal{O}_\Pi))=[
+\Pi]\in\mathrm{im}(\mathrm{cl})$.
+\end{remark}
+
+\section{What is not proved}
+Field~3 is the statement that a named primitive class $\gamma\in P^4(X,\QQ)\cap H^{2,2}$ lies outside $\mathrm{im}(\mathrm{cl})$. The present equivalence never mentions $\mathrm{CH}^2(X)$. Named classes on this host are algebraic. Clay status remains open.
+
+\begin{thebibliography}{9}
+\bibitem{Orlov09} D.~Orlov, Derived categories of coherent sheaves and triangulated categories of singularities, Progr.\ Math.\ 270 (2009), 503--531.
+\bibitem{Eisenbud80} D.~Eisenbud, Homological algebra on a complete intersection, Trans.\ Amer.\ Math.\ Soc.\ 260 (1980), 35--64.
+\end{thebibliography}
+\end{document}
