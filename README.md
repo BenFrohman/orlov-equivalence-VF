@@ -1,3 +1,4 @@
+<!-- Copyright (c) 2026 Benjamin Stanley Frohman. Licensed under Apache-2.0. -->
 # Orlov equivalence on the locked sextic fourfold
 
 **This repository records Orlov's theorem for one host. It is not a Hodge counterexample and not a Clay Millennium disproof.**

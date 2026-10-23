@@ -1,3 +1,4 @@
+<!-- Copyright (c) 2026 Benjamin Stanley Frohman. Licensed under Apache-2.0. -->
 # Orlov’s equivalence on V(F)
 
 **Disclaimer.** This note specializes Orlov’s 2009 theorem to one sextic fourfold. It is not a term of `ClayDisproofTerm`. Field 3 stays empty.
