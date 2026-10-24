@@ -43,3 +43,7 @@ The inhabited geometric term is `⟨V(F), [Π], Π⟩` in `NL_alg`.
 D. Orlov, *Derived categories of coherent sheaves and triangulated categories of singularities*, in Algebra, Arithmetic, and Geometry: In Honor of Yu. I. Manin, Progr. Math. 270, Birkhäuser, 2009, pp. 503–531. [arXiv:math/0503632](https://arxiv.org/abs/math/0503632)
 
 Author of this specialization note: Benjamin Stanley Frohman.
+
+## License
+
+Copyright (c) 2026 Benjamin Stanley Frohman. Licensed under the Apache License, Version 2.0 (see [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE)).
