@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata below."
+title: "Orlov's Landau-Ginzburg / Calabi-Yau Equivalence on the Locked Three-Chain Sextic Fourfold V(F) in Lean 4"
+authors:
+  - family-names: "Frohman"
+    given-names: "Benjamin Stanley"
+    orcid: "https://orcid.org/0009-0006-7068-3718"
+    email: "frohmanbenjamin@gmail.com"
+version: "1.0.0"
+doi: "10.5281/zenodo.23629478"
+date-released: "2026-09-28"
+license: "Apache-2.0"
+repository-code: "https://github.com/BenFrohman/orlov-equivalence-VF"
+url: "https://doi.org/10.5281/zenodo.23629478"

@@ -1,15 +1,15 @@
-orlov-equivalence-VF
+orlov-equivalence-VF — Orlov's Landau-Ginzburg / Calabi-Yau Equivalence on the Locked Three-Chain Sextic Fourfold V(F) in Lean 4
 Copyright 2026 Benjamin Stanley Frohman
-
-Author: Benjamin Stanley Frohman <frohmanbenjamin@gmail.com>
 ORCID: https://orcid.org/0009-0006-7068-3718
-GitHub: https://github.com/BenFrohman
+GitHub: https://github.com/BenFrohman/orlov-equivalence-VF
+Zenodo DOI: https://doi.org/10.5281/zenodo.23629478
+Origin Provenance: 2026-09-28 03:22:45 CDT (Git Initial Commit)
 
-As of this commit, this repository is offered under the Apache License, Version 2.0.
-See LICENSE.
+This product includes software, formal Lean 4 proofs, and mathematical manuscripts developed by
+Benjamin Stanley Frohman (frohmanbenjamin@gmail.com).
 
-Copies already received under the MIT License keep that grant.
-This commit does not revoke it.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this work except in compliance with the License.
+You may obtain a copy of the License at
 
-Orlov's 2009 paper is cited. It is not relicensed, and this note is not a
-Hodge counterexample.
+    http://www.apache.org/licenses/LICENSE-2.0

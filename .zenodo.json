@@ -1,0 +1,33 @@
+{
+  "title": "Orlov's Landau-Ginzburg / Calabi-Yau Equivalence on the Locked Three-Chain Sextic Fourfold V(F) in Lean 4",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "publication_date": "2026-09-28",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "doi": "10.5281/zenodo.23629478",
+  "creators": [
+    {
+      "name": "Frohman, Benjamin Stanley",
+      "affiliation": "Independent Researcher",
+      "orcid": "0009-0006-7068-3718"
+    }
+  ],
+  "keywords": [
+    "Orlov equivalence",
+    "derived categories",
+    "matrix factorizations",
+    "sextic fourfold",
+    "Calabi-Yau fourfold",
+    "Lean 4"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/BenFrohman/orlov-equivalence-VF",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "notes": "Origin Provenance: 2026-09-28 03:22:45 CDT (Git Initial Commit). Copyright (c) 2026 Benjamin Stanley Frohman. All rights reserved. Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0).",
+  "description": "<p>Preprint (<code>orlov_equivalence_VF.pdf</code>) and Lean 4 formalization (<code>Orlov/Equivalence.lean</code>) applying Orlov's 2009 theorem (<em>Triangulated categories of singularities and equivalences between Landau-Ginzburg models</em>, Theorem 2.13) to the smooth three-chain sextic Calabi-Yau fourfold <code>Y = V(F) &sub; P^5</code> with <code>F = &Sigma; (x_i^5 x_{i+3} + x_{i+3}^6)</code> (degree <code>d=6=N=5+1</code>, Gorenstein parameter <code>a=0</code>), establishing the exact triangulated equivalence <code>D^b(coh V(F)) &cong; HMF^{gr}(A, F)</code> while documenting why this equivalence does not produce a second projective fourfold or an algebraic cycle outside <code>Q&lt;h^2, [&Pi;]&gt;</code>.</p>"
+}
