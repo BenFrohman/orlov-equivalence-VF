@@ -13,3 +13,7 @@ date-released: '2026-11-04'
 license: Apache-2.0
 repository-code: https://github.com/BenFrohman/orlov-equivalence-VF
 url: https://doi.org/10.5281/zenodo.23629478
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23942459
+    description: "Zenodo record of Frohman_Orlov_Equivalence_VF_Conditional_2026.pdf"

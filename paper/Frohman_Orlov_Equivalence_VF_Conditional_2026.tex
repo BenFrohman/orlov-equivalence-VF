@@ -20,6 +20,8 @@
 \sloppy
 \begin{document}
 \begin{abstract}
+\noindent\textbf{DOI:} \texttt{10.5281/zenodo.23942459}\par\smallskip
+
 For the sextic $F=x_0^5x_3+x_3^6+x_1^5x_4+x_4^6+x_2^5x_5+x_5^6$, Orlov's theorem gives an equivalence $D^b(\mathrm{Coh}\,V(F))\simeq\mathrm{HMF}^{\mathrm{gr}}(F)$, since the Gorenstein parameter is $0$. We record this equivalence in Lean~4 as an explicit hypothesis rather than an axiom: a structure \texttt{OrlovHypothesis} whose fields are two placeholder types and a type equivalence between them. Conditional on any such structure we prove that the forward map is injective and surjective, and that one type is inhabited if and only if the other is. We also check that the recorded Gorenstein parameter equals $0$. No category, coherent sheaf or matrix factorization is constructed. The development builds with no \texttt{sorry}, no \texttt{native\_decide} and no user axioms.
 \end{abstract}
 \maketitle

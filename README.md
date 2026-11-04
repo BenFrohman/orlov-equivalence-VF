@@ -71,3 +71,10 @@ See [CERTIFICATE.md](CERTIFICATE.md) and the paper in `paper/`.
 
 - [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23629477.svg)](https://doi.org/10.5281/zenodo.23629477) Orlov's Landau-Ginzburg / Calabi-Yau Equivalence on the Locked Three-Chain Sextic Fourfold V(F) in Lean 4 — all versions: [10.5281/zenodo.23629477](https://doi.org/10.5281/zenodo.23629477); latest version: [10.5281/zenodo.23629478](https://doi.org/10.5281/zenodo.23629478)
 - [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23867583.svg)](https://doi.org/10.5281/zenodo.23867583) Orlov's Landau-Ginzburg / Calabi-Yau Equivalence on the Locked Three-Chain Sextic Fourfold V(F) in Lean 4 — all versions: [10.5281/zenodo.23867583](https://doi.org/10.5281/zenodo.23867583); latest version: [10.5281/zenodo.23867584](https://doi.org/10.5281/zenodo.23867584)
+
+
+## Zenodo: Frohman_Orlov_Equivalence_VF_Conditional_2026
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23942459.svg)](https://doi.org/10.5281/zenodo.23942459)
+
+The paper `paper/Frohman_Orlov_Equivalence_VF_Conditional_2026.pdf` is archived on Zenodo as https://doi.org/10.5281/zenodo.23942459.
