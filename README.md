@@ -66,3 +66,8 @@ Copyright (c) 2026 Benjamin Stanley Frohman. Licensed under the Apache License, 
 ## Verification certificate
 
 See [CERTIFICATE.md](CERTIFICATE.md) and the paper in `paper/`.
+
+## Zenodo archive
+
+- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23629477.svg)](https://doi.org/10.5281/zenodo.23629477) Orlov's Landau-Ginzburg / Calabi-Yau Equivalence on the Locked Three-Chain Sextic Fourfold V(F) in Lean 4 — all versions: [10.5281/zenodo.23629477](https://doi.org/10.5281/zenodo.23629477); latest version: [10.5281/zenodo.23629478](https://doi.org/10.5281/zenodo.23629478)
+- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23867583.svg)](https://doi.org/10.5281/zenodo.23867583) Orlov's Landau-Ginzburg / Calabi-Yau Equivalence on the Locked Three-Chain Sextic Fourfold V(F) in Lean 4 — all versions: [10.5281/zenodo.23867583](https://doi.org/10.5281/zenodo.23867583); latest version: [10.5281/zenodo.23867584](https://doi.org/10.5281/zenodo.23867584)
