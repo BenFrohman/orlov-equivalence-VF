@@ -1,0 +1,164 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb}
+\usepackage[no-math]{fontspec}
+\setmonofont{DejaVu Sans Mono}[Scale=0.72]
+\usepackage{longtable}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\title[orlov-equivalence-VF]{Orlov's Equivalence for a Sextic Fourfold as an Explicit Hypothesis: a Machine-Checked Lean~4 Interface}
+\author{Benjamin Stanley Frohman}
+\email{frohmanbenjamin@gmail.com}
+\urladdr{https://github.com/BenFrohman/orlov-equivalence-VF}
+\date{November 4, 2026}
+\sloppy
+\begin{document}
+\begin{abstract}
+For the sextic $F=x_0^5x_3+x_3^6+x_1^5x_4+x_4^6+x_2^5x_5+x_5^6$, Orlov's theorem gives an equivalence $D^b(\mathrm{Coh}\,V(F))\simeq\mathrm{HMF}^{\mathrm{gr}}(F)$, since the Gorenstein parameter is $0$. We record this equivalence in Lean~4 as an explicit hypothesis rather than an axiom: a structure \texttt{OrlovHypothesis} whose fields are two placeholder types and a type equivalence between them. Conditional on any such structure we prove that the forward map is injective and surjective, and that one type is inhabited if and only if the other is. We also check that the recorded Gorenstein parameter equals $0$. No category, coherent sheaf or matrix factorization is constructed. The development builds with no \texttt{sorry}, no \texttt{native\_decide} and no user axioms.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+Let $F$ be the degree-6 polynomial above and $X=V(F)\subset\mathbb P^5$. Orlov~\cite{orlov} proved that for a graded Gorenstein algebra with Gorenstein parameter $a$, the bounded derived category of the corresponding projective scheme is related to the graded singularity category. When $a=0$ the two are equivalent. For a hypersurface of degree $d$ in $\mathbb P^{n-1}$ one has $a=n-d$. Here $n=6$ and $d=6$, so $a=0$. Orlov's theorem is a published result. It is \emph{not} formalized here. The repository previously stated it with three Lean \texttt{axiom} declarations (\texttt{DbCohVF}, \texttt{HMFgrF}, \texttt{orlov\_equivalence}), together with two theorems of type \texttt{True}. The present version removes all three axioms and the two vacuous theorems. The equivalence is a hypothesis, and every result depends on it explicitly.
+
+\section{Definitions}
+\begin{definition}[\texttt{OrlovVF.TypeEquiv}]
+For types $\alpha,\beta$, a \emph{type equivalence} consists of maps $f:\alpha\to\beta$ and $g:\beta\to\alpha$ with $g(f(a))=a$ and $f(g(b))=b$ for all $a,b$. Core Lean has no \texttt{Equiv}, so the structure is defined here.
+\end{definition}
+\begin{definition}[\texttt{OrlovVF.OrlovHypothesis}]
+An \emph{Orlov hypothesis} consists of two types \texttt{DbCohVF} and \texttt{HMFgrF}, standing for $D^b(\mathrm{Coh}\,V(F))$ and $\mathrm{HMF}^{\mathrm{gr}}(F)$, and a type equivalence \texttt{orlov\_equivalence} between them.
+\end{definition}
+The polynomial is recorded as the string \texttt{F\_poly}, and the Gorenstein parameter as \texttt{gorensteinParameter} $:=0$.
+
+\section{Results}
+\begin{proposition}[\texttt{OrlovVF.gorensteinParameter\_eq\_zero}]
+The recorded Gorenstein parameter equals $0$.
+\end{proposition}
+This is true by definition. Lean checks the recorded value, not the geometric computation $a=n-d$.
+\begin{theorem}[Conditional; \texttt{OrlovVF.orlov\_toFun\_injective}, \texttt{OrlovVF.orlov\_toFun\_surjective}]
+Let $H$ be an Orlov hypothesis with forward map $f$. Then $f(a)=f(b)$ implies $a=b$, and every $b$ in \texttt{HMFgrF} is $f(a)$ for some $a$.
+\end{theorem}
+\begin{theorem}[Conditional; \texttt{OrlovVF.orlov\_nonempty\_iff}]
+Let $H$ be an Orlov hypothesis. Then \texttt{DbCohVF} is nonempty if and only if \texttt{HMFgrF} is nonempty.
+\end{theorem}
+The proofs are elementary consequences of the two inverse laws.
+
+\section{Correspondence between claims and Lean declarations}\label{sec:table}
+Every mathematical claim of this paper is listed below with the Lean declaration that proves it. ``Conditional'' means the hypothesis named in the statement is an explicit argument of the Lean theorem and is \emph{not} proved in the repository. No claim in this paper goes beyond these statements.
+
+{\footnotesize
+\begin{longtable}{p{0.30\linewidth}p{0.40\linewidth}p{0.22\linewidth}}
+\hline
+Claim & Lean declaration & Status \\
+\hline\endhead
+Gorenstein parameter recorded as $0$ & \path{OrlovVF.gorensteinParameter_eq_zero} & Proved (by definition) \\
+Forward map injective & \path{OrlovVF.orlov_toFun_injective} & Conditional on \texttt{OrlovHypothesis} \\
+Forward map surjective & \path{OrlovVF.orlov_toFun_surjective} & Conditional on \texttt{OrlovHypothesis} \\
+Nonempty iff nonempty & \path{OrlovVF.orlov_nonempty_iff} & Conditional on \texttt{OrlovHypothesis} \\
+\hline
+\end{longtable}}
+
+\section{Scope and limitations}
+Orlov's theorem, derived categories, matrix factorizations and the scheme $V(F)$ are not formalized. The two types in \texttt{OrlovHypothesis} are arbitrary, and every Lean theorem holds for any pair of equivalent types. The Lean development therefore checks only the logical interface. Statement changes in this version: the axioms \texttt{DbCohVF}, \texttt{HMFgrF} and \texttt{orlov\_equivalence} are now fields of \texttt{OrlovHypothesis}. The theorems \texttt{no\_miss\_supplied : True} and \texttt{plane\_is\_algebraic : True} were removed because they asserted nothing. Four theorems were added: \texttt{gorensteinParameter\_eq\_zero}, \texttt{orlov\_toFun\_injective}, \texttt{orlov\_toFun\_surjective} and \texttt{orlov\_nonempty\_iff}.
+
+
+\appendix
+\section{Lean source}
+The complete Lean source of the certified development (copyright headers omitted) is reproduced verbatim.
+\subsection*{\texttt{Orlov/Equivalence.lean}}
+\begin{verbatim}
+/-
+  Orlov equivalence on V(F).
+  Records D^b(Coh V(F)) ≃ HMF^gr(F) as a named *hypothesis*, not a proof.
+  The former axioms `DbCohVF`, `HMFgrF`, `orlov_equivalence` are now fields of
+  the structure `OrlovHypothesis`; every result below is conditional on it.
+-/
+
+namespace OrlovVF
+
+def F_poly : String :=
+  "x0^5 * x3 + x3^6 + x1^5 * x4 + x4^6 + x2^5 * x5 + x5^6"
+
+def gorensteinParameter : Int := 0
+
+/-- A type equivalence (core Lean has no `Equiv`, so we record one here). -/
+structure TypeEquiv (α β : Type) where
+  toFun : α → β
+  invFun : β → α
+  left_inv : ∀ a, invFun (toFun a) = a
+  right_inv : ∀ b, toFun (invFun b) = b
+
+/-- Orlov's theorem for `V(F)` (Gorenstein parameter 0), as a hypothesis:
+two placeholder types for `D^b(Coh V(F))` and `HMF^gr(F)` and an equivalence
+between them. Not constructed in this repository. -/
+structure OrlovHypothesis where
+  DbCohVF : Type
+  HMFgrF : Type
+  orlov_equivalence : TypeEquiv DbCohVF HMFgrF
+
+theorem gorensteinParameter_eq_zero : gorensteinParameter = 0 := rfl
+
+/-- Conditional: under the Orlov hypothesis, the forward map is injective. -/
+theorem orlov_toFun_injective (H : OrlovHypothesis) {a b : H.DbCohVF}
+    (h : H.orlov_equivalence.toFun a = H.orlov_equivalence.toFun b) : a = b := by
+  have := congrArg H.orlov_equivalence.invFun h
+  rwa [H.orlov_equivalence.left_inv, H.orlov_equivalence.left_inv] at this
+
+/-- Conditional: under the Orlov hypothesis, the forward map is surjective. -/
+theorem orlov_toFun_surjective (H : OrlovHypothesis) (b : H.HMFgrF) :
+    ∃ a, H.orlov_equivalence.toFun a = b :=
+  ⟨H.orlov_equivalence.invFun b, H.orlov_equivalence.right_inv b⟩
+
+/-- Conditional: under the Orlov hypothesis, one side is inhabited iff the other is. -/
+theorem orlov_nonempty_iff (H : OrlovHypothesis) :
+    Nonempty H.DbCohVF ↔ Nonempty H.HMFgrF :=
+  ⟨fun ⟨a⟩ => ⟨H.orlov_equivalence.toFun a⟩, fun ⟨b⟩ => ⟨H.orlov_equivalence.invFun b⟩⟩
+
+end OrlovVF
+\end{verbatim}
+
+\section{Verification certificate}\label{app:verification-certificate}
+
+The formal development was machine-checked as follows.
+
+{\raggedright
+\begin{itemize}
+\item Repository:\\ {\footnotesize\url{https://github.com/BenFrohman/orlov-equivalence-VF}}
+\item Verified commit:\\ {\footnotesize\texttt{6bb51a6a994805cc3fd3401c8366cc8de74c0a30}}
+\item Lean toolchain: \texttt{leanprover/lean4:v4.34.0}
+\item Mathlib: none (the development depends only on Lean core)
+\item Continuous integration run (build, axiom audit, \texttt{sorry}/\texttt{axiom} scan; passed):\\ {\footnotesize\url{https://github.com/BenFrohman/orlov-equivalence-VF/actions/runs/41794903723}}
+\item SHA-256 of the GitHub source tarball of the verified commit, downloaded twice with identical result:\\ {\footnotesize\url{https://github.com/BenFrohman/orlov-equivalence-VF/archive/6bb51a6a994805cc3fd3401c8366cc8de74c0a30.tar.gz}}\\
+{\footnotesize\texttt{281af485c03971cdf78a1b7c7d7ef11a2e1e217dd7a1cc165f28e19e99985377}}
+\end{itemize}\par}
+
+The tarball hash refers to the verified commit rather than to a release tag, since a document cannot contain the hash of an archive that includes itself. The Lean sources are unchanged between that commit and the release tag.
+
+\textbf{The development contains no \texttt{sorry} and no user-declared axioms.} Every one of the 6 theorems and lemmas listed below depends only on Lean's standard axioms \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound} (or on none). The table is the verbatim output of \texttt{lake env lean AxiomAudit.lean} (\texttt{\#print axioms}) on the verified commit.
+
+{\footnotesize
+\begin{longtable}{p{0.55\linewidth}p{0.38\linewidth}}
+\hline
+Lean declaration & \texttt{\#print axioms} \\
+\hline\endhead
+\path{OrlovVF.TypeEquiv.left_inv} & \texttt{(no axioms)} \\
+\path{OrlovVF.TypeEquiv.right_inv} & \texttt{(no axioms)} \\
+\path{OrlovVF.gorensteinParameter_eq_zero} & \texttt{(no axioms)} \\
+\path{OrlovVF.orlov_nonempty_iff} & \texttt{(no axioms)} \\
+\path{OrlovVF.orlov_toFun_injective} & \texttt{(no axioms)} \\
+\path{OrlovVF.orlov_toFun_surjective} & \texttt{(no axioms)} \\
+\hline
+\end{longtable}}
+
+\begin{thebibliography}{9}
+\bibitem{orlov} D.~Orlov, \emph{Derived categories of coherent sheaves and triangulated categories of singularities}, in: Algebra, Arithmetic, and Geometry, Progr. Math. 270, Birkh\"auser (2009), 503--531.
+\bibitem{lean} L.~de Moura and S.~Ullrich, \emph{The Lean 4 theorem prover and programming language}, CADE-28, LNCS 12699 (2021), 625--635.
+\end{thebibliography}
+
+\end{document}

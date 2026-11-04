@@ -1,15 +1,14 @@
 {
-  "title": "Orlov's Landau-Ginzburg / Calabi-Yau Equivalence on the Locked Three-Chain Sextic Fourfold V(F) in Lean 4",
+  "title": "Orlov's Equivalence for a Sextic Fourfold as an Explicit Hypothesis: a Machine-Checked Lean 4 Interface",
   "upload_type": "publication",
   "publication_type": "preprint",
-  "publication_date": "2026-09-28",
-  "version": "1.0.0",
+  "publication_date": "2026-11-04",
+  "version": "v1.1.0",
   "license": "Apache-2.0",
   "doi": "10.5281/zenodo.23629478",
   "creators": [
     {
       "name": "Frohman, Benjamin Stanley",
-      "affiliation": "Independent Researcher",
       "orcid": "0009-0006-7068-3718"
     }
   ],
