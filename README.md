@@ -1,6 +1,7 @@
 <!-- ZENODO-PROVENANCE-HEADER -->
 
 [![Lean certificate](https://github.com/BenFrohman/orlov-equivalence-VF/actions/workflows/certify.yml/badge.svg)](https://github.com/BenFrohman/orlov-equivalence-VF/actions/workflows/certify.yml)
+[![Lean 4](https://github.com/BenFrohman/orlov-equivalence-VF/actions/workflows/lean.yml/badge.svg)](https://github.com/BenFrohman/orlov-equivalence-VF/actions/workflows/lean.yml)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23629478.svg)](https://doi.org/10.5281/zenodo.23629478)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--7068--3718-brightgreen.svg)](https://orcid.org/0009-0006-7068-3718)
