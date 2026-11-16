@@ -3,11 +3,18 @@ Copyright (c) 2026 Benjamin Stanley Frohman. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Benjamin Stanley Frohman
 -/
+
 /-
   Orlov equivalence on V(F).
   Records D^b(Coh V(F)) ≃ HMF^gr(F) as a named *hypothesis*, not a proof.
   The former axioms `DbCohVF`, `HMFgrF`, `orlov_equivalence` are now fields of
   the structure `OrlovHypothesis`; every result below is conditional on it.
+-/
+
+/-!
+# Orlov.Equivalence
+
+Machine-checked Lean 4 module.
 -/
 
 namespace OrlovVF
