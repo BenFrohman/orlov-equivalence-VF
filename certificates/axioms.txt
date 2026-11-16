@@ -1,0 +1,13 @@
+'OrlovVF.OrlovHypothesis.mk.inj' does not depend on any axioms
+'OrlovVF.OrlovHypothesis.mk.injEq' depends on axioms: [propext]
+'OrlovVF.OrlovHypothesis.mk.sizeOf_spec' does not depend on any axioms
+'OrlovVF.TypeEquiv.left_inv' does not depend on any axioms
+'OrlovVF.TypeEquiv.mk.inj' does not depend on any axioms
+'OrlovVF.TypeEquiv.mk.injEq' depends on axioms: [propext]
+'OrlovVF.TypeEquiv.mk.sizeOf_spec' does not depend on any axioms
+'OrlovVF.TypeEquiv.right_inv' does not depend on any axioms
+'OrlovVF.gorensteinParameter_eq_zero' does not depend on any axioms
+'OrlovVF.orlov_nonempty_iff' does not depend on any axioms
+'OrlovVF.orlov_toFun_injective' does not depend on any axioms
+'OrlovVF.orlov_toFun_surjective' does not depend on any axioms
+AUDIT PASS: 12 theorems in 1 modules depend only on propext, Classical.choice, Quot.sound (or on no axioms)

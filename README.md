@@ -16,6 +16,10 @@
 <!-- Copyright (c) 2026 Benjamin Stanley Frohman. Licensed under Apache-2.0. -->
 # Orlov equivalence on the locked sextic fourfold
 
+## Kernel certificate
+
+[certificates/CERTIFICATE.md](certificates/CERTIFICATE.md): commit `dc82d35`, `leanprover/lean4:v4.34.0`. `lake build` passes; the sorry/axiom scan finds 0 hits; **12 theorems depend only on `propext`, `Classical.choice`, `Quot.sound`**; 1 of 1 modules replayed through the kernel, 0 failures ([CI run](https://github.com/BenFrohman/orlov-equivalence-VF/actions/runs/43938053726)).
+
 **This repository records Orlov's theorem for one host. It is not a Hodge counterexample and not a Clay Millennium disproof.**
 
 Host:
