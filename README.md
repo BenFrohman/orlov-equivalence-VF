@@ -67,6 +67,8 @@ Author of this specialization note: Benjamin Stanley Frohman.
 
 Copyright (c) 2026 Benjamin Stanley Frohman. Licensed under the Apache License, Version 2.0 (see [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE)).
 
+
+Any use, reproduction, or redistribution, in whole or in part, must retain the [NOTICE](NOTICE) file and credit Benjamin Stanley Frohman as the author. If you use this work in a publication, please cite it (see [CITATION.cff](CITATION.cff) / the Zenodo DOI).
 ## Verification certificate
 
 See [CERTIFICATE.md](CERTIFICATE.md) and the paper in `paper/`.

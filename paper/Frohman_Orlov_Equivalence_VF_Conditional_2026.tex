@@ -1,3 +1,5 @@
+% Copyright (c) 2026 Benjamin Stanley Frohman
+% Licensed under the Apache License 2.0
 \documentclass[11pt]{amsart}
 \usepackage[margin=1in]{geometry}
 \usepackage{amssymb}
@@ -25,6 +27,8 @@
 For the sextic $F=x_0^5x_3+x_3^6+x_1^5x_4+x_4^6+x_2^5x_5+x_5^6$, Orlov's theorem gives an equivalence $D^b(\mathrm{Coh}\,V(F))\simeq\mathrm{HMF}^{\mathrm{gr}}(F)$, since the Gorenstein parameter is $0$. We record this equivalence in Lean~4 as an explicit hypothesis rather than an axiom: a structure \texttt{OrlovHypothesis} whose fields are two placeholder types and a type equivalence between them. Conditional on any such structure we prove that the forward map is injective and surjective, and that one type is inhabited if and only if the other is. We also check that the recorded Gorenstein parameter equals $0$. No category, coherent sheaf or matrix factorization is constructed. The development builds with no \texttt{sorry}, no \texttt{native\_decide} and no user axioms.
 \end{abstract}
 \maketitle
+\noindent{\small Copyright (c) 2026 Benjamin Stanley Frohman. Licensed under the Apache License 2.0.}\par
+
 
 \section{Introduction}
 Let $F$ be the degree-6 polynomial above and $X=V(F)\subset\mathbb P^5$. Orlov~\cite{orlov} proved that for a graded Gorenstein algebra with Gorenstein parameter $a$, the bounded derived category of the corresponding projective scheme is related to the graded singularity category. When $a=0$ the two are equivalent. For a hypersurface of degree $d$ in $\mathbb P^{n-1}$ one has $a=n-d$. Here $n=6$ and $d=6$, so $a=0$. Orlov's theorem is a published result. It is \emph{not} formalized here. The repository previously stated it with three Lean \texttt{axiom} declarations (\texttt{DbCohVF}, \texttt{HMFgrF}, \texttt{orlov\_equivalence}), together with two theorems of type \texttt{True}. The present version removes all three axioms and the two vacuous theorems. The equivalence is a hypothesis, and every result depends on it explicitly.
