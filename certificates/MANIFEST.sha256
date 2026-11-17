@@ -1,0 +1,16 @@
+# Kernel certificate manifest
+# source commit: c6b5a15b1940af48c5cdaa0f28438423593026fe
+# lean-toolchain: leanprover/lean4:v4.34.0
+# Mathlib: none (no Mathlib dependency)
+# CI run: https://github.com/BenFrohman/orlov-equivalence-VF/actions/runs/43954489489
+# rebuild: git clone https://github.com/BenFrohman/orlov-equivalence-VF.git && cd orlov-equivalence-VF && git checkout c6b5a15b1940af48c5cdaa0f28438423593026fe && lake build && python3 certificates/tools/sorry_scan.py && python3 certificates/tools/gen_audit.py /tmp/KernelCertificateAudit.lean /tmp/modules.txt && lake env lean /tmp/KernelCertificateAudit.lean > /tmp/axioms.raw.txt && python3 certificates/tools/check_audit.py /tmp/axioms.raw.txt | tail -n 1
+# verify: cd certificates && sha256sum -c MANIFEST.sha256
+fb9b2ed84870513a7d6b195c3b14cea589f0256ad939c69cf9e3d0af0de18672  CERTIFICATE.md
+1dd4e848c656bfc3b936c03f4990bf2d32b230a1cc2bbd1037ec5948d750482e  KernelCertificateAudit.lean.txt
+658ba5b068c56a7ebb8b8cfa8bb0d2fd433487232fc70513502d56a3212ce0cf  axioms.raw.txt
+35801b81b1ae506f259cecc3c4b263bfc2c2f97d323a55ea0252df2ffc87cd9d  axioms.txt
+b48d69cd83213d25c9f12e843510bf2ac6c11ac27ef981734cc1adcacc47824b  build.log
+b87698d830d8f260d473e0eddbacf8278ef1cf96e9de088e89fb7f01c1ef6549  environment.txt
+159b0320cc0a54ec9b9a89fb3dce000ed85d79f8c58b830e5dfbcef958db8912  leanchecker.txt
+b4cc660263026e44bddb71bf570aea033745cbb643a210fcc9252c315bedd513  modules.txt
+f6a916ad807c8786f91618abb8f4c6a1d08d353e56ab03e470042d85ac819776  sorry-scan.txt

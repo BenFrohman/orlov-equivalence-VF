@@ -5,13 +5,13 @@ This file records a reproducible machine check of the Lean 4 development in this
 | Item | Value |
 |---|---|
 | Repository | https://github.com/BenFrohman/orlov-equivalence-VF |
-| Certified commit | `dc82d352300111441dc79d3032266615fc90b248` (branch `chore/kernel-certificate`) |
-| Lean sources | identical to `main` at `6762bcda44fae0247f63f29d586e926378e6e9b9`: no `.lean`, lakefile, manifest or toolchain file differs; the certified commit only adds CI and the scripts in `certificates/tools/` |
+| Certified commit | `c6b5a15b1940af48c5cdaa0f28438423593026fe` (branch `main`) |
+| Lean sources | the certified commit is the `main` head itself; the certificate files were committed afterwards in a commit that changes no `.lean`, lakefile, manifest or toolchain file |
 | lean-toolchain | `leanprover/lean4:v4.34.0` |
 | Lean | Lean (version 4.34.0, x86_64-unknown-linux-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release) |
 | Mathlib | none (no Mathlib dependency) |
-| Date (UTC) | 2026-11-16T19:23:33Z |
-| CI run | https://github.com/BenFrohman/orlov-equivalence-VF/actions/runs/43938053726 |
+| Date (UTC) | 2026-11-16T20:54:46Z |
+| CI run | https://github.com/BenFrohman/orlov-equivalence-VF/actions/runs/43954489489 |
 | `lake build` | `Build completed successfully (3 jobs).` ([build.log](build.log)) |
 | sorry / admit / native_decide / axiom scan | `RESULT: 0 hits` ([sorry-scan.txt](sorry-scan.txt)) |
 | `#print axioms` | `AUDIT PASS: 12 theorems in 1 modules depend only on propext, Classical.choice, Quot.sound (or on no axioms)` ([axioms.txt](axioms.txt)) |
@@ -48,5 +48,5 @@ Full `#print axioms` output (verbatim from `axioms.txt`):
 ## Rebuild
 
 ```
-git clone https://github.com/BenFrohman/orlov-equivalence-VF.git && cd orlov-equivalence-VF && git checkout dc82d352300111441dc79d3032266615fc90b248 && lake build && python3 certificates/tools/sorry_scan.py && python3 certificates/tools/gen_audit.py /tmp/KernelCertificateAudit.lean /tmp/modules.txt && lake env lean /tmp/KernelCertificateAudit.lean > /tmp/axioms.raw.txt && python3 certificates/tools/check_audit.py /tmp/axioms.raw.txt | tail -n 1
+git clone https://github.com/BenFrohman/orlov-equivalence-VF.git && cd orlov-equivalence-VF && git checkout c6b5a15b1940af48c5cdaa0f28438423593026fe && lake build && python3 certificates/tools/sorry_scan.py && python3 certificates/tools/gen_audit.py /tmp/KernelCertificateAudit.lean /tmp/modules.txt && lake env lean /tmp/KernelCertificateAudit.lean > /tmp/axioms.raw.txt && python3 certificates/tools/check_audit.py /tmp/axioms.raw.txt | tail -n 1
 ```
